@@ -13,6 +13,6 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2014050800;
+$plugin->version   = 2015120800;
 $plugin->requires  = 2013050100;
 $plugin->component = 'theme_leaf';
