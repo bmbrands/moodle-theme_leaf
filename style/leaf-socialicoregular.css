@@ -1,0 +1,58 @@
+
+ .socicon,  .socicon:hover, .socicon a:hover {text-decoration:none!important;}
+
+ .socicon:before {
+  font-family: "zocial";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.wordpress.socicon:before { content: '\e84e'; } /* '' */
+.lt-ie8 .wordpress.socicon { zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe84e;&nbsp;'); }
+
+.facebook.socicon:before { content: '\e83f'; } /* '' */
+.lt-ie8 .facebook.socicon { zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe83f;&nbsp;'); }
+
+.twitter.socicon:before { content: '\e82f'; } /* '' */
+.lt-ie8 .twitter.socicon { zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe82f;&nbsp;'); }
+
+ .twitterbird.socicon:before { content: '\e82f'; } /* '' */
+ .lt-ie8 .twitterbird.socicon { zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe82f;&nbsp;'); }
+
+
+/* IE 7 */
+
+.lt-ie8 .socicon {
+  font-family: 'zocial';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1em;
+  display:inline;
+  zoom:1;
+  margin-left: .2em;
+  font-size:14px;
+ }

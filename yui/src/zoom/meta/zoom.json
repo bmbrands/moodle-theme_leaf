@@ -1,0 +1,7 @@
+{
+  "moodle-theme_leaf-zoom": {
+    "requires": [
+        "node"
+    ]
+  }
+}

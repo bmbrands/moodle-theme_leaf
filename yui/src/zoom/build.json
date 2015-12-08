@@ -1,0 +1,10 @@
+{
+  "name": "moodle-theme_leaf-zoom",
+  "builds": {
+    "moodle-theme_leaf-zoom": {
+      "jsfiles": [
+        "zoom.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1019 @@
+// Main page styling
+
+.container,
+#main-content,
+.innerheader,
+.preheader {
+    max-width: 1100px; /* width of content*/
+    min-width: 240px;
+    position: relative;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#page {
+    padding-top: 20px;
+}
+
+#page-site-index .headingblock {
+    margin-bottom: 15px;
+    font-weight: 300;
+    font-family: "Raleway","Helvetica Neue",Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    background: none repeat scroll 0 0 transparent;
+    margin-top: 0px;
+}
+
+body, html {
+    color: @leaftexts;
+    padding-top: 0;
+}
+
+
+// Header styling
+
+.leafheader {
+    border-bottom: 47px solid @leafgray;
+    clear: both;
+    height: 79px;
+    position: relative;
+    background-color: @leafheaderback;
+}
+
+#logo {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 79px;
+    padding: 0;
+    float: left;
+    position: relative;
+    margin-top: 0px;
+    a:hover,
+    a:focus {
+        text-decoration: none;
+    }
+    .sitelink {
+        display: inline-block;
+    }
+    .sitename {
+        font-size: 2em;
+        color: #FFF;
+        line-height: 79px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+    .sitedescription {
+        color: #FFF;
+        float: right;
+        font-size: 1.5em;
+        font-weight: normal;
+        line-height: 79px;
+    }
+}
+
+.menu-wrapper {
+    position: absolute;
+    top: 80px;
+    font-size: 120%;
+    width: 100%;
+}
+
+.mobile_nav, .mobile-menu-holder {
+    display: none;
+}
+
+.primary_menu {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: none;
+    }
+
+    li {
+        float: left;
+        margin: 0 0 0 2px;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        text-transform: lowercase;
+    }
+
+    li a {
+        border: none;
+        color: @white;
+        display: block;
+        margin: 0!important;
+        padding: 0 12px;
+        height: 45px;
+        line-height: 45px;
+        text-decoration: none;
+    }
+
+    li.parent.foo a {
+        background: inherit;
+        /***! added this for ipad*/
+    }
+
+    &> li > a:hover,
+    &> li > a:focus,
+    &> .active > a,
+    &> li > a.selected,
+    .parent > .active {
+        background: @leafmenuhover;
+    }
+
+    ul li a:hover,
+    ul li a:focus,
+    ul .active > a,
+    ul a.selected {
+        color: @bluelinks;
+        background: @leafmenuhover;
+    }
+
+    li.active ul li.active a,  li ul a:hover {
+        background-color: @leaflinkhoverbg;
+    }
+
+    li ul li a, .lt-ie9  li ul li a {
+        font-size: 100%;
+    }
+
+    li.active ul a {
+        background-color: inherit;
+        *background-color: transparent;
+    }
+
+    li.active ul li.active a {
+        background-color: @leaflinkhoverbg;
+    }
+
+    li ul li {
+        background: @leafmenuhover;
+        float: none;
+        left: auto;
+        margin: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    li li {
+        border-bottom: 1px solid @leafdropdownborder;
+    }
+
+    li ul a,
+    li ul li a,
+    li ul li ul li a {
+        height: auto;
+        line-height: 1.5;
+        padding: 7px 10px;
+        width: 175px;
+        color: @leafdropdownlink;
+    }
+
+    li ul {
+        left: 0;
+        padding: 0;
+        position: absolute;
+        top: 45px;
+        z-index: 9999;
+    }
+
+    li ul ul {
+        border-top: 0px;
+    }
+
+    ul ul {
+        border: none;
+        top: 0!important;
+        left: 195px;
+    }
+
+     li ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    li.edge ul {
+        left:-100%!important;
+        box-shadow: 0px 0px 3px #000000;
+    }
+
+    ul li.edge ul {
+        left:-100%!important;
+        width:195px;
+    }
+}
+
+//Login box
+/* LOGIN */
+.loginbox.twocolumns {
+    height: auto;
+}
+.loginbox {
+    height: 370px;
+    margin-bottom: 200px;
+    h2,
+    .loginbox .subcontent {
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+    h2 {
+        font-size: 23px;
+    }
+
+    .loginform .form-input {
+        float: none;
+        width: 100%;
+    }
+
+    .loginform .form-label {
+        display: none;
+    }
+
+    input#password,input#username {
+        width: 100%;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        height: 30px;
+    }
+
+    .loginform .form-label label {
+        font-size: 1.2em;
+    }
+    #loginbtn {
+        background: none repeat scroll 0 0 #53A3B7;
+        border-color: #53A3B7;
+        color: #FFFFFF;
+        border-radius: 3px;
+        font-size: 16px;
+        padding: 3px 15px;
+        margin-left: 0px;
+        width: 100%;
+        text-shadow: none;
+        &:hover,
+        &:focus,
+        &.active,
+        &.disabled {
+            background-color: #2B778A;
+            border-color: #2B778A;
+            color: #FFFFFF;
+        }
+    }
+    &.twocolumns .loginpanel,
+    &.onecolumn .loginpanel {
+        background-color: #FFF;
+        border-radius: 3px;
+        display: block;
+        padding: 7px;
+        text-align: center;
+        max-width: 300px;
+        .loginsub .desc {
+            display: none;
+        }
+    }
+    &.twocolumns {
+        display: inline-block;
+        background-color: #FFF;
+        .signuppanel {
+            vertical-align: top;
+            padding: 7px;
+            border-radius: 3px;
+            width: 45%;
+            float: none;
+            display: inline-block;
+        }
+        .loginpanel {
+            width: 45%;
+            float: none;
+            display: inline-block;
+        }
+    }
+    .forgetpass a {
+        font-size: 0.9em;
+        text-decoration: underline;
+    }
+}
+
+
+.ie .loginbox .loginform .form-label {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+
+//Login page news
+.sitenewsmobile {
+    color: #FFFFFF;
+    display: none;
+    margin-left: 50px;
+    margin-right: 50px;
+    .carousel.slide {
+       min-height: 300px;
+       background: transparent;
+       min-height: 200px;
+       border-radius: 0px;
+       padding: 0px;
+    }
+    .carousel-control {
+        background-color: none;
+        font-size: 40px;
+        width: 20px;
+        text-decoration: none;
+    }
+    carousel-control.left {
+        left: -40px;
+    }
+    .carousel-control.right {
+        right: -40px;
+    }
+    .forumpost {
+        background-color: transparent;
+        border: 0px;
+        border-radius: 0px;
+        box-shadow: 0px;
+        min-height: 20px;
+        padding: 0px;
+    }
+    h2 {
+        color: #fff;
+    }
+}
+@media (max-width: 767px) {
+    .sitenewsmobile {
+        display: block;
+    }
+    .sitenewsdesktop {
+        display: none;
+    }
+}
+
+.sitenewsdesktop {
+
+    color: #fff;
+
+    text-shadow: 0 1px 4px #000000;
+    z-index: 999;
+    margin: 15px 30px;
+    .carousel.slide {
+       height: 350px;
+       overflow: hidden;
+       background-image: url([[pix:theme|transdark]]);
+       border-radius: 3px;
+       padding: 10px;
+    }
+    .carousel-control {
+        position: static;
+        margin-left: 10px;
+        float: right;
+        height: 20px;
+        line-height: 17px;
+        opacity: 1;
+        margin: 0;
+        padding: 0;
+        top: auto;
+        background-color: none;
+        font-size: 22px;
+        line-height: 17px;
+        width: 20px;
+        text-decoration: none;
+    }
+
+    .newscontrols {
+        right: 10px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .forumpost {
+        background-color: transparent;
+        border: 0px;
+        border-radius: 0px;
+        box-shadow: 0px;
+        margin-bottom: 20px;
+        min-height: 20px;
+        padding: 0px;
+        line-height: 20px;
+    }
+    h2 {
+        color: #fff;
+        font-size: 23px;
+        margin: 0px;
+    }
+    h3 {
+        color: #fff;
+        font-size: 18px;
+        margin: 0px;
+    }
+    a {
+        text-decoration: underline;
+        color: #fff;
+    }
+}
+//Footer
+
+#footer {
+    background-color: @leafheaderback;
+    border-top: 3px solid #A7A9AC;
+    font-size: 0.9em;
+    clear: both;
+    padding: 2% 0 0;
+    color: @white;
+    a,
+    a:hover,
+    a:focus {
+        color: #86b9e9;
+    }
+    .helpuser {
+        position: relative;
+    }
+    .helpusername,
+    .helpuserdescription {
+        margin-left: 10px;
+    }
+    img.userpicture {
+        float: left;
+    }
+    h4 {
+        border-bottom: 1px solid @white;
+    }
+    .densemlogo {
+        margin-top: 10px;
+    }
+}
+
+// Login Info box
+
+.logininfowrap {
+    float: right;
+    img {
+        float: right;
+        margin-top: 2px;
+    }
+
+    .logininfo {
+        float: right;
+        margin-right: 10px;
+        line-height: 40px;
+    }
+}
+
+
+// Blocks
+
+.block {
+    background-color: rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    padding-left: 3px;
+    .header {
+        border-bottom: 2px solid #e1ab27;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .header .title h2 {
+        display: inline;
+        font-size: 1.2em;
+        color: inherit;
+        font-weight: 300;
+        line-height: 20px;
+        padding: 0px;
+        text-shadow: 0px;
+        text-transform: inherit;
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+    }
+    .content {
+        padding: 0;
+    }
+}
+
+
+// Bootstrap fixes
+
+.enrolpanel .container {
+    max-width: auto; /* width of content*/
+    min-width: auto;
+    position: relative;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.userenrolment .col_role .addrole {
+    background-color: #758694;
+    border: 0px;
+    height: auto;
+}
+
+/* Enrolment page */
+.userenrolment .col_role {
+    width: auto;
+}
+
+// Header search box
+
+.search-wrapper {
+    float: right;
+    padding: 5px 0 0 0;
+    .search {
+        input {
+            background-color: #fff;
+            width: 100px;
+            margin-left: 5px;
+            top: 3px;
+            position: relative;
+            font-size: 16px;
+            -webkit-appearance: textfield;
+        }
+        #search-trigger {
+            font-size: 0.75em;
+            font-weight: bold;
+            color: #333;
+            text-indent: -9999em;
+            display: block;
+            float: left;
+            padding: 0;
+            margin: 0;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            top: 3px;
+            background: url([[pix:theme|search]]) 0px 50% no-repeat;
+            cursor: pointer;
+            &.active {
+                background: url([[pix:theme|search]]) -30px 50% no-repeat;
+            }
+        }
+    }
+}
+
+
+// Socio Icons
+.socicon,  .socicon:hover, .socicon a:hover {
+    text-decoration:none!important;
+}
+
+.socicon:before {
+    font-family: "zocial";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+}
+
+.wordpress.socicon:before { content: '\e84e'; }
+.facebook.socicon:before { content: '\e83f'; }
+.twitter.socicon:before { content: '\e82f'; }
+.twitterbird.socicon:before { content: '\e82f'; }
+
+ul.social {
+    color: #758694;
+    line-height: 40px;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    top: 2px;
+    border-right: 0 none;
+    float: right;
+    height: 45px;
+    margin: 0;
+    list-style: none outside none;
+    li {
+        display: inline-block;
+        padding: 0 7px;
+    }
+}
+
+nav.socioicons {
+    float: left;
+    line-height: 43px;
+}
+
+.leafheader ul.social {
+    display: none;
+}
+
+.mobileonly {
+    display: none;
+}
+
+li.activity .instancename {
+    text-decoration: underline;
+}
+
+.discussioncontrol.nullcontrol {
+    display: none;
+}
+
+.discussioncontrol {
+    margin-right: 15px;
+    display: block;
+}
+
+.singleselect {
+    display: inline-block;
+    width: 220px;
+}
+
+/*Quiz module editing*/
+#page-mod-quiz-edit .questionbankwindow.block div.header {
+    background-color: transparent;
+    div.title h2 {
+        color: #111;
+    }
+}
+/*Quiz module editing*/
+#page-mod-quiz-edit .questionbankwindow.block div.header {
+    background-color: transparent;
+    div.title h2 {
+        color: #111;
+    }
+}
+#page-mod-quiz-edit .questionbankwindow a#showbankcmd, #page-mod-quiz-edit .questionbankwindow a#hidebankcmd {
+    color: #111;
+    text-decoration: underline;
+}
+#page-mod-quiz-edit div.container div.generalbox,
+#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
+    padding: 0;
+    margin: 0;
+}
+.questionbankwindow.block {
+    border-width: 0;
+    display: block;
+    float: right;
+    padding: 0px;
+    right: 0px;
+    width: 30%;
+}
+
+a.glossary {
+    border-bottom: 2px dotted #FFCB44;
+}
+a.glossary:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #FFCB44;
+}
+
+
+@media only screen and (max-width: 767px) {
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 14px;
+    }
+
+    body {
+        padding: 0px !important;
+        font-size: 12px;
+    }
+
+    .innerheader,
+    .preheader {
+        width: 100%;
+    }
+
+    // Twitter / Facebook icons
+    .leafheader ul.social {
+        display: block;
+        position: relative;
+        left: inherit;
+        right: 10px;
+        float: right;
+    }
+
+    .preheader ul.social {
+        display: none;
+    }
+
+    .leafheader  ul.social a {
+        color: #FFF;
+        font-size: 13px;
+    }
+    .leafheader  ul.social li {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    #page .container {
+        width: 90%;
+    }
+
+    #logo {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 59px;
+        margin: 0;
+        padding: 10px 0!important;
+        a {
+            display: inline-block;
+        }
+        .sitename {
+            line-height: 30px;
+            font-size: 1.5em;
+        }
+
+        .sitedescription {
+            color: #FFF;
+            float: left;
+            font-size: 1em;
+            font-weight: normal;
+            line-height: 29px;
+            position: absolute;
+            bottom: 0px;
+            left: 10px;
+        }
+    }
+    .logininfowrap .logininfo {
+        font-size: 0.8em;
+    }
+
+    // mobile navigation
+    .leafheader {
+        border-bottom: 0px;
+        height: auto;
+    }
+    .mobile_nav {
+        margin: 0;
+        display: block;
+        float: left;
+        height: 40px;
+        width: 40px;
+        background: #53a3b7;
+        top: 3px;
+        width: 40px;
+        z-index: 100000;
+    }
+    .mobile_nav a span {
+        display: block;
+        width: 20px;
+        height: 40px;
+        padding: 0;
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        background: url([[pix:theme|navtriggerbg]]) -20px 50% no-repeat;
+    }
+    .mobile_nav a.active span {
+        background-position: -60px 50%;
+    }
+
+    .mobile_nav a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 0 0 0 5px;
+        height: 40px;
+        width: 100%;
+        line-height: 38px;
+        position: relative;
+        z-index: 2000;
+    }
+        /*** Mobile Navigation ***/
+    .menu-wrapper {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    /*** Mobile Navigation ***/
+    #main_menu, #main_menu .primary_menu, .js #main_menu, .js #main_menu {
+        /* hide on mobile */
+        display: none!important;
+    }
+
+    .primary_menu {
+        margin: 0;
+    }
+
+    .primary_menu ul {
+        height: auto;
+        width: 100%;
+        overflow: visible;
+    }
+
+    .primary_menu *, .primary_menu {
+        float: none!important;
+    }
+
+    .primary_menu li a {
+        height: auto;
+        line-height: normal;
+        margin: 0;
+        font-size: 100%!important;
+        padding: 10px 0 5px 20px;
+    }
+
+    .primary_menu li ul a,
+    .primary_menu li ul li a,
+    .primary_menu li ul li ul li a {
+        height: auto;
+        width: auto;
+        line-height: auto;
+        background: #4c5966;
+        padding: 8px 0 5px 20px;
+    }
+
+    .primary_menu li ul,
+    .primary_menu,
+    .primary_menu ul ul,
+    .primary_menu ul ul ul {
+        position: relative!important;
+        top: auto!important;
+        left: 0!important;
+        clear: both!important;
+        right: auto!important;
+        width: 100%!important;
+    }
+
+    .primary_menul,
+    .primary_menu ul {
+        border: none;
+    }
+
+    .primary_menu ul {
+        display: none;
+    }
+
+    .primary_menu li {
+        margin: 0;
+    }
+
+    .primary_menu li li a {
+        text-transform: none;
+    }
+
+    .primary_menu ul ul li a {
+        padding-left: 30px;
+    }
+
+    .primary_menu ul ul li ul li a {
+        padding-left: 50px;
+    }
+
+    .primary_menu ul ul li:last-child {
+        border: 0px;
+    }
+
+    .primary_menu ul ul li {
+        border-left: 0px solid #fff;
+        border-right: 0px solid #fff;
+    }
+}
+
+@media only screen and (max-width: 444px) {
+    body {
+        font-size: 11px;
+    }
+    .logininfowrap .logininfo {
+        display: none;
+    }
+    .logininfowrap .mobileonly {
+        display: inline-block;
+        line-height: 40px;
+        margin-right: 10px;
+    }
+    #logo .sitename {
+        font-size: 1.2em;
+    }
+
+}
+
+/* COURSE BOXES */
+
+.courses .coursebox {
+    border: 0 none;
+    border-radius: 0 0 0 0;
+    background-color: #F6F6F6;
+
+    &:hover {
+        background-color: #F6F6F6;
+    }
+    &.even {
+        background-color: #F6F6F6;
+    }
+    &> .info > .name {
+        width: 100%;
+    }
+    .content .courseimage {
+        width: 30%;
+    }
+    &> .info > .name,
+    .content .teachers,
+    .content .courseimage,
+    .content .coursefile {
+        clear: none;
+    }
+    .content .summary,
+    .content .coursecat,
+    .content .entercourse {
+        float: right;
+        width: 65%;
+    }
+    .content .courseimage img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .content .teachers {
+        float: right;
+        width: 65%;
+        color: #666666;
+    }
+    &> .info > .name a {
+        background-image: none;
+        padding-left: 0px;
+        font-size: 20.8px;
+    }
+}
+
+table.flexible th, .generaltable th, table.flexible td, .generaltable td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.path-grade-report-grader div.left_scroller tr, .path-grade-report-grader div.right_scroller tr, .path-grade-report-grader div.left_scroller td, .path-grade-report-grader div.right_scroller td, .path-grade-report-grader div.left_scroller th, .path-grade-report-grader div.right_scroller th {
+    height: 4.5em !important;
+    font-size: 10px;
+}
+.path-grade-report-grader td input.text {
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+.moodlezoom {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .moodlezoom {
+        display: block;
+    }
+    .moodlezoom {
+        margin-left: 10px;
+        span.zoomout {
+            display: none;
+        }
+    }
+    .dir-rtl .moodlezoom {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    body.zoomin {
+        padding-top :0;
+        .moodlezoom {
+            span.zoomout {
+                display: block;
+            }
+            span.zoomin {
+                display: none;
+            }
+        }
+        .block-region {
+            display: none;
+        }
+        #region-main,
+        #region-bs-main-and-pre {
+            width: 100% !important;
+            left: 0 !important;
+        }
+        header.navbar {
+            display: none;
+        }
+        #page-header h1,
+        #page-footer {
+            display: none;
+        }
+    }
+}
