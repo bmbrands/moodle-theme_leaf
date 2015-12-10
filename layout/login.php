@@ -17,6 +17,8 @@ if (isset($CFG->httpswwwroot)) {
     $root = $CFG->wwwroot;
 }
 
+$themerenderer = $PAGE->get_renderer('theme_leaf', 'widgets');
+
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('bootstrap', 'theme_leaf');
 $PAGE->requires->jquery_plugin('leaf', 'theme_leaf');
@@ -32,7 +34,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-    <?php echo $OUTPUT->leaf_login_background();?>
+    <?php echo $themerenderer->leaf_login_background();?>
     </script>
 </head>
 
@@ -40,7 +42,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php echo $OUTPUT->leaf_header();?>
+<?php echo $themerenderer->leaf_header();?>
 
 
 
@@ -52,7 +54,7 @@ echo $OUTPUT->doctype() ?>
                 <?php echo $OUTPUT->main_content() ?>
             </div>
             <div class="span6">
-                <?php echo $OUTPUT->leaf_frontpage_carrousel('desktop');?>
+                <?php echo $themerenderer->leaf_frontpage_carrousel('desktop');?>
             </div>
         </div>
     </div>
@@ -61,12 +63,12 @@ echo $OUTPUT->doctype() ?>
              <div class="row-fluid">
                 <div class="span12">
                     <div>
-                        <?php echo $OUTPUT->leaf_frontpage_carrousel('mobile');?>
+                        <?php echo $themerenderer->leaf_frontpage_carrousel('mobile');?>
                     </div>
                 </div>
              </div>
         </div>
-        <?php echo $OUTPUT->leaf_footer(); ?>
+        <?php echo $themerenderer->leaf_footer(); ?>
         <?php echo $OUTPUT->standard_footer_html(); ?>
     </div>
 </div>

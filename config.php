@@ -16,8 +16,16 @@ $THEME->name = 'leaf';
 
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->lessfile = 'leaf';
-$THEME->sheets = array('customcss');
+
+// Moodle 2.9 config
+// $THEME->lessfile = 'leaf';
+// $THEME->sheets = array('customcss');
+
+// Moodle 2.8 config
+$THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle'));
+$THEME->sheets = array('leaf','customcss');
+
+
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
@@ -26,10 +34,7 @@ $THEME->editor_sheets = array('editor');
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
         'html',
-    ),
-    'gradereport' => array(
-        'grader',
-    ),
+    )
 );
 
 $THEME->layouts = array(

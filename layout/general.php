@@ -20,6 +20,8 @@ $hasbackground = (!empty($PAGE->layout_options['hasbackground']));
 $hasnews = (!empty($PAGE->layout_options['hasnews']));
 $myhome =  (!empty($PAGE->layout_options['myhome']));
 
+$themerenderer = $PAGE->get_renderer('theme_leaf', 'widgets');
+
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
@@ -70,6 +72,7 @@ $PAGE->requires->jquery_plugin('bootstrap', 'theme_leaf');
 $PAGE->requires->jquery_plugin('leaf', 'theme_leaf');
 $PAGE->requires->jquery_plugin('backstretch', 'theme_leaf');
 $PAGE->requires->jquery_plugin('twitter', 'theme_leaf');
+
 echo $OUTPUT->doctype() ?>
 
 <html <?php echo $OUTPUT->htmlattributes() ?>>
@@ -96,13 +99,13 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <?php if (isloggedin()) {
-     echo $OUTPUT->leaf_social();
+     echo $themerenderer->leaf_social();
 }?>
-<?php echo $OUTPUT->leaf_header();?>
+<?php echo $themerenderer->leaf_header();?>
 
 
 <?php if ($hasnews) { ?>
-<?php echo $OUTPUT->leaf_frontpage_carrousel('desktop');?>
+<?php echo $themerenderer->leaf_frontpage_carrousel('desktop');?>
 <?php } ?>
 
 <div id="page">
@@ -123,7 +126,7 @@ echo $OUTPUT->doctype() ?>
                         <div class="breadcrumb-button">
                             <?php echo $PAGE->button; ?>
                         </div>
-                        <?php echo $OUTPUT->navbar(); ?>
+                        <?php echo $themerenderer->navbar(); ?>
 
                     </div>
                 </div>
@@ -152,7 +155,7 @@ echo $OUTPUT->doctype() ?>
 
             <?php echo $coursecontentheader; ?>
             <?php if ($layout === 'side-pre-only') { 
-                echo $OUTPUT->content_zoom();
+                echo $themerenderer->content_zoom();
             } ?>
             <?php echo $OUTPUT->main_content() ?>
             <?php echo $coursecontentfooter; ?>
@@ -183,13 +186,13 @@ echo $OUTPUT->doctype() ?>
                 <div class="span12">
                     <div>
                     <?php if ($hasnews) { ?>
-                        <?php echo $OUTPUT->leaf_frontpage_carrousel('mobile');?>
+                        <?php echo $themerenderer->leaf_frontpage_carrousel('mobile');?>
                     <?php } ?>
                     </div>
                 </div>
              </div>
         </div>
-        <?php echo $OUTPUT->leaf_footer(); ?>
+        <?php echo $themerenderer->leaf_footer(); ?>
         <?php echo $OUTPUT->standard_footer_html(); ?>
     </div>
 </div>
