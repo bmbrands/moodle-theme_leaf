@@ -458,6 +458,9 @@ body, html {
     img {
         float: right;
         margin-top: 2px;
+        @media (min-width: 767px) {
+            margin-top: 5px;
+        }
     }
 
     .logininfo {
@@ -510,12 +513,6 @@ body, html {
     width: auto;
     padding: 0;
     margin: 0 auto;
-}
-
-.userenrolment .col_role .addrole {
-    background-color: #758694;
-    border: 0px;
-    height: auto;
 }
 
 /* Enrolment page */
@@ -636,37 +633,6 @@ li.activity .instancename {
     width: 220px;
 }
 
-/*Quiz module editing*/
-#page-mod-quiz-edit .questionbankwindow.block div.header {
-    background-color: transparent;
-    div.title h2 {
-        color: #111;
-    }
-}
-/*Quiz module editing*/
-#page-mod-quiz-edit .questionbankwindow.block div.header {
-    background-color: transparent;
-    div.title h2 {
-        color: #111;
-    }
-}
-#page-mod-quiz-edit .questionbankwindow a#showbankcmd, #page-mod-quiz-edit .questionbankwindow a#hidebankcmd {
-    color: #111;
-    text-decoration: underline;
-}
-#page-mod-quiz-edit div.container div.generalbox,
-#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
-    padding: 0;
-    margin: 0;
-}
-.questionbankwindow.block {
-    border-width: 0;
-    display: block;
-    float: right;
-    padding: 0px;
-    right: 0px;
-    width: 30%;
-}
 
 a.glossary {
     border-bottom: 2px dotted #FFCB44;
@@ -961,6 +927,10 @@ table.flexible th, .generaltable th, table.flexible td, .generaltable td {
     text-align: left;
 }
 
+//LTI FIX. https://tracker.moodle.org/browse/MDL-33960
+body#page-mod-lti-view {
+   overflow: visible !important;
+}
 
 .moodlezoom {
     display: none;
@@ -991,7 +961,7 @@ table.flexible th, .generaltable th, table.flexible td, .generaltable td {
                 display: none;
             }
         }
-        .block-region {
+        #block-region-side-pre {
             display: none;
         }
         #region-main,

@@ -24,6 +24,9 @@ $themerenderer = $PAGE->get_renderer('theme_leaf', 'widgets');
 
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 
+$regionmain = 'span9 pull-right';
+$sidepre = 'span3 desktop-first-column';
+
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
 
 if ($showsidepre) {
@@ -33,9 +36,7 @@ if ($showsidepre) {
 if ($PAGE->user_is_editing()) {
     if ($PAGE->blocks->is_known_region('side-pre')) {
         $showsidepre = true;
-    }
-    if ($PAGE->blocks->is_known_region('side-post')) {
-        $showsidepost = true;
+        $CFG->additionalhtmlfooter = '<pre>Side Pre</pre>';
     }
 }
 
@@ -105,11 +106,11 @@ echo $OUTPUT->doctype() ?>
 
 
 <?php if ($hasnews) { ?>
-<?php echo $themerenderer->leaf_frontpage_carrousel('desktop');?>
+    <?php echo $themerenderer->leaf_frontpage_carrousel('desktop');?>
 <?php } ?>
 
 <div id="page">
-    <div id="main-content" class="clearfix">
+     <div id="main-content" class="clearfix">
         <?php if ($hasheader) { ?>
         <div id="page-header" class="clearfix">
             <h2 class="short_headline"><span><?php echo $PAGE->title ?></span></h2>
@@ -118,68 +119,34 @@ echo $OUTPUT->doctype() ?>
             <?php } ?>
         </div>
         <?php } ?>
-
         <?php if ($hasnavbar) { ?>
-        <div class="">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <div class="breadcrumb-button">
-                            <?php echo $PAGE->button; ?>
-                        </div>
-                        <?php echo $themerenderer->navbar(); ?>
-
+        <div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="breadcrumb-button">
+                        <?php echo $PAGE->button; ?>
                     </div>
+                    <?php echo $themerenderer->navbar(); ?>
+
                 </div>
+            </div>
         </div>
         <?php } ?>
         <div id="page-content" class="row-fluid">
+            <section id="region-main" class="<?php echo $regionmain; ?>">
+                <?php
+                echo $OUTPUT->course_content_header();
 
-
-            <?php if ($layout === 'side-pre-only') { ?>
-            <div id="region-main" class="span9 pull-right">
-
-
-            <?php } else if ($layout === 'content-only') { ?>
-            <div id="region-main" class="span12">
-
-            <?php } ?>
-
-                <?php if ($hasheader) { ?>
-                <div id="page-header" class="clearfix">
-                    <?php if (!empty($courseheader)) { ?>
-                        <div id="course-header"><?php echo $courseheader; ?>
-                        </div>
-                    <?php } ?>
-                </div>
-                <?php } ?>
-
-            <?php echo $coursecontentheader; ?>
-            <?php if ($layout === 'side-pre-only') { 
-                echo $themerenderer->content_zoom();
-            } ?>
-            <?php echo $OUTPUT->main_content() ?>
-            <?php echo $coursecontentfooter; ?>
-            </div> <!-- end spanx -->
-
-            <?php if ($layout === 'side-pre-only') { ?>
-            <div class="span3 pull-left desktop-first-column">
-                <div id="region-post" class="block-region">
-                    <div class="region-content">
-                               <?php
-                                  if($hassidepre){
-                                      echo $OUTPUT->blocks_for_region('side-pre');
-                                  }
-                              ?>
-                    </div>
-                </div>
-            </div>
-            <?php } ?>
-
-            </div> <!-- end row-fluid -->
-            </div>
-
-
-
+                if ($layout === 'side-pre-only') { 
+                    echo $themerenderer->content_zoom();
+                }
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+                ?>
+            </section>
+            <?php echo $OUTPUT->blocks('side-pre', $sidepre); ?>
+        </div>
+    </div>
     <div id="footer">
         <div class="container mobileonly">
              <div class="row-fluid">
@@ -196,8 +163,6 @@ echo $OUTPUT->doctype() ?>
         <?php echo $OUTPUT->standard_footer_html(); ?>
     </div>
 </div>
-
-
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 </body>

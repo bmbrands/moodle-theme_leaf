@@ -557,7 +557,7 @@ class theme_leaf_widgets_renderer extends core_renderer {
         $loginpage = ((string)$this->page->url === get_login_url());
         $course = $this->page->course;
         if (\core\session\manager::is_loggedinas()) {
-            $realuser = session_get_realuser();
+            $realuser = \core\session\manager::get_realuser();
             $fullname = fullname($realuser, true);
             if ($withlinks) {
                 $loginastitle = get_string('loginas');

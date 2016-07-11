@@ -33,9 +33,6 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-    <?php echo $themerenderer->leaf_login_background();?>
-    </script>
 </head>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses) ?>">
@@ -74,5 +71,8 @@ echo $OUTPUT->doctype() ?>
 </div>
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+<script>
+<?php echo $themerenderer->leaf_login_background();?>
+</script>
 </body>
 </html>

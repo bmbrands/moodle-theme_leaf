@@ -17,14 +17,13 @@ $THEME->name = 'leaf';
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
 
-// Moodle 2.9 config
-// $THEME->lessfile = 'leaf';
-// $THEME->sheets = array('customcss');
+// Moodle 2.9+ config
+$THEME->lessfile = 'leaf';
+$THEME->sheets = array('customcss');
 
 // Moodle 2.8 config
-$THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle'));
-$THEME->sheets = array('leaf','customcss');
-
+// $THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle'));
+// $THEME->sheets = array('leaf', 'customcss');
 
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
@@ -72,7 +71,7 @@ $THEME->layouts = array(
         'file' => 'general.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('noheader'=>true,'nonavbar'=>true,'hascolumns'=>true),
+        'options' => array('noheader'=>true, 'nonavbar'=>true, 'hascolumns'=>true),
     ),
     // Server administration scripts.
     'admin' => array(
