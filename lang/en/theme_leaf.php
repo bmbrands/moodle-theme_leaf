@@ -61,3 +61,5 @@ $string['backgroundfolder'] = 'select background folder';
 $string['backgroundfolderdesc'] = 'Select the background folder for the login page pictures';
 $string['fullscreen'] = 'Full screen';
 $string['closefullscreen'] = 'Close full screen';
+$string['commonlyused'] = 'Commonly Used Modules';
+$string['commonlyuseddesc'] = 'Please provide a list of commonly used Modules that Should be shown in the course activity chooser for teachers and admins. Please list them devided by commas';

@@ -111,4 +111,12 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+
+    $name = 'theme_leaf/commonlyused';
+    $title = get_string('commonlyused', 'theme_leaf');
+    $description = get_string('commonlyuseddesc', 'theme_leaf');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 }
