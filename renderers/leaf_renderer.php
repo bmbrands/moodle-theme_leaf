@@ -300,7 +300,7 @@ class theme_leaf_widgets_renderer extends core_renderer {
         $content .= html_writer::end_tag('div');
         $content .= html_writer::start_tag('div',array('id'=>'logo'));
         $attr = array(
-            'src' => $this->pix_url('trans', 'theme'),
+            'src' => $this->image_url('trans', 'theme'),
             'alt' => 'Moodle',
             'class' => 'logo',
         );
@@ -413,7 +413,7 @@ class theme_leaf_widgets_renderer extends core_renderer {
         $content .= html_writer::end_tag('section');
         $content .= html_writer::start_tag('section');
         $attr = array(
-            'src' => $this->pix_url('densemlogo', 'theme'),
+            'src' => $this->image_url('densemlogo', 'theme'),
             'alt' => 'Denver Seminary Logo',
             'class' => 'densemlogo',
         );
